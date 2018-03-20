@@ -15,30 +15,23 @@
         <div class="main-menu">
             <h5 class="sidenav-heading">القائمة الرئيسية</h5>
             <ul id="side-main-menu" class="side-menu list-unstyled">
-                <li>
-                    <a href="index.html">الصفحة الرئيسية <i class="icon-home"></i> </a>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/home']">الصفحة الرئيسية <i class="icon-home"></i> </a>
                 </li>
-                <li>
-                    <a href="forms.html">الاستمارات <i class="icon-form"></i> </a>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/feedback']">المراجعات <i class="icon-form"></i> </a>
                 </li>
-                <li>
-                    <a href="charts.html">الرسوم البيانية <i class="fa fa-bar-chart"></i> </a>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/donors']">المتبرعون <i class="fa fa-bar-chart"></i> </a>
                 </li>
-                <li>
-                    <a href="tables.html">الجداول <i class="icon-grid"></i> </a>
+                <li routerLinkActive="active"> 
+                    <a [routerLink]="['/requests']">الطلبات <i class="icon-grid"></i> </a>
                 </li>
 
 
 
             </ul>
         </div>
-        <div class="admin-menu">
-            <h5 class="sidenav-heading">القائمه الثانوية</h5>
-            <ul id="side-admin-menu" class="side-menu list-unstyled">
-                <li>
-                    <a href="login.html">صفحة تسجيل الدخول <i class="icon-interface-windows"></i> </a>
-                </li>
-            </ul>
-        </div>
+      
     </div>
 </nav>

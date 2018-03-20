@@ -13,7 +13,7 @@ export class DonorsComponent implements OnInit {
   users: Observable<any[]>;
 
   constructor(db: AngularFireDatabase) {
-    this.users = db.list('/Feedback').valueChanges();
+    this.users = db.list('/Donors').valueChanges();
   }
 
   ngOnInit() {

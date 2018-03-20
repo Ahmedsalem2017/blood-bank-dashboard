@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-requests',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestsComponent implements OnInit {
 
-  constructor() { }
+  users: Observable<any[]>;
+  
+  constructor(db: AngularFireDatabase) {
+    this.users = db.list('/required').valueChanges();
+  }
 
   ngOnInit() {
   }

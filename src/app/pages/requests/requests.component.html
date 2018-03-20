@@ -20,32 +20,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let user of users | async">
                             <td><strong><a href="#" class="btn fa fa-trash"></a></strong></td>
-                            <td>09:30 pm dd/mm/yyyy</td>
-                            <td>البصره</td>
-                            <td>A+</td>
-                            <td>1234567</td>
-                            <td>فهد</td>
-                            <th scope="row">1</th>
-                        </tr>
-                        <tr>
-                            <td><strong><a href="#" class="btn fa fa-trash"></a></strong></td>
-                            <td>09:30 pm dd/mm/yyyy</td>
-                            <td>البصره</td>
-                            <td>A+</td>
-                            <td>1234567</td>
-                            <td>فهد</td>
-                            <th scope="row">1</th>
-                        </tr>
-                        <tr>
-                            <td><strong><a href="#" class="btn fa fa-trash"></a></strong></td>
-                            <td>09:30 pm dd/mm/yyyy</td>
-                            <td>البصره</td>
-                            <td>A+</td>
-                            <td>1234567</td>
-                            <td>فهد</td>
-                            <th scope="row">1</th>
+                            <td>{{ user.time }}</td>
+                            <td>{{ user.location }}</td>
+                            <td>{{ user.bloodtype }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td>{{ user.name }}</td>
+                            <td scope="row">1</td>
                         </tr>
                     </tbody>
                 </table>

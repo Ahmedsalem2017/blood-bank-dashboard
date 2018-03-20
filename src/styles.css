@@ -3,3 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 @import "assets/css/grasp_mobile_progress_circle-1.0.0.min.css";
 @import "assets/css/style.default.css";
+
+.active{
+    width: 100% !important;
+}

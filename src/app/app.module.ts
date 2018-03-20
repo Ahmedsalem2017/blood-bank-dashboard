@@ -1,3 +1,5 @@
+import { AuthGuardService } from './services/auth-guard.service';
+import { environment } from './../environments/environment';
 import { WrongeWayComponent } from './components/wronge-way/wronge-way.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,26 +17,35 @@ import { FeedbackComponent } from './pages/feedback/feedback.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ReactiveFormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   {
     path: '',
-    component: FeedbackComponent
+    component: FeedbackComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'home',
-    component: FeedbackComponent
+    component: FeedbackComponent,
+    canActivate: [AuthGuardService]
   },
 {
   path: 'donors',
-  component: DonorsComponent
+  component: DonorsComponent,
+  canActivate: [AuthGuardService]
 },
 {
   path: 'requests',
-  component: RequestsComponent
+  component: RequestsComponent,
+  canActivate: [AuthGuardService]
 },
 {
   path: 'feedback',
-  component: FeedbackComponent
+  component: FeedbackComponent,
+  canActivate: [AuthGuardService]
 },
 {
   path: 'login',
@@ -61,9 +72,13 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,15 @@
+.center {
+    margin: 3% auto;
+}
+
+.fa.fa-trash {
+    font-size: 25px;
+}
+
+.dir {
+    direction: rtl;
+}
+
+.text_Alignment {
+    text-align: right;
+}

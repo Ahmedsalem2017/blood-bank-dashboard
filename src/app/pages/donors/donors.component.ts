@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireDatabase , AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -11,12 +10,18 @@ import { Observable } from 'rxjs/Observable';
 export class DonorsComponent implements OnInit {
 
   users: Observable<any[]>;
+  itemRef: AngularFireList<any>;
 
   constructor(db: AngularFireDatabase) {
     this.users = db.list('/Donors').valueChanges();
+    this.itemRef = db.list('/Donors');
   }
 
   ngOnInit() {
   }
+
+  // deleteItem(key: string) {    
+  //   this.itemRef.remove(key); 
+  // }
 
 }

@@ -21,7 +21,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let user of users | async">
-                            <td><strong><a href="#" class="btn fa fa-trash"></a></strong></td>
+                            <td><strong><a href="#" class="btn fa fa-trash" (click)="delete(user.$key)"></a></strong></td>
                             <td>{{ user.time }}</td>
                             <td>{{ user.location }}</td>
                             <td>{{ user.bloodtype }}</td>

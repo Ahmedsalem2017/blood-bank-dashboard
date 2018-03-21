@@ -21,6 +21,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaginationComponent } from './components/pagination/pagination.component';
 const appRoutes: Routes = [
   {
     path: '',
@@ -68,7 +69,8 @@ const appRoutes: Routes = [
     DonorsComponent,
     RequestsComponent,
     FeedbackComponent,
-    WrongeWayComponent
+    WrongeWayComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

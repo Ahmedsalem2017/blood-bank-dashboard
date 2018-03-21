@@ -13,3 +13,11 @@
 .text_Alignment {
     text-align: right;
 }
+
+table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}

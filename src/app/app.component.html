@@ -1,6 +1,6 @@
-<div class="page active" >
-<app-nav-bar  *ngIf="afAuth.authState | async"></app-nav-bar>
+<div class="page" [class.active]="!user.isLogin">
+<app-nav-bar  *ngIf="user.isLogin"></app-nav-bar>
 <router-outlet></router-outlet>
-<app-right-offcanvas *ngIf="afAuth.authState | async"></app-right-offcanvas>
-<app-footer *ngIf="afAuth.authState | async"></app-footer>
+<app-right-offcanvas *ngIf="user.isLogin"></app-right-offcanvas>
+<app-footer *ngIf="user.isLogin"></app-footer>
 </div>

@@ -1,6 +1,6 @@
-import { AngularFireAuth } from 'angularfire2/auth';
+import { UserService } from './services/user.service';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private afAuth: AngularFireAuth) {
-    afAuth.authState.subscribe(x => console.log(x));
+  constructor(private user: UserService) {
+    console.log(user.isLogin);
   }
 
 

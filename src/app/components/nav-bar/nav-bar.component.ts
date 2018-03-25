@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,13 +9,13 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class NavBarComponent implements OnInit {
 
   constructor(
-    private afAuth: AngularFireAuth
+    private user: UserService
   ) { }
 
   ngOnInit() {
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    this.user.logout();
   }
 }

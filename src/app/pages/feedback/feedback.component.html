@@ -1,41 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
+<div class="container ">
+    <div class="row text_Alignment">
+        <div class="col-12">
 
-    <!-- Feedback Card Section-->
-    <div class="card w-75 center">
-        <div class="card-body">
-          <h5 class="card-title">Username</h5>
-          <p class="card-text"> Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">View</a>
+            <!-- Feedback Card Section-->
+            <div *ngFor="let item of items" class="card w-75 center">
+                <div class="card-body ">
+                    <h5 class="card-title ">{{ item.feedback_title }}</h5>
+                    <p class="card-text">
+                        {{ item.feedback_subject }}
+                    </p>
+                    <button class="btn btn-danger pull-left" (click)="deleteItem(item.key)">حذف</button>
+                </div>
+            </div>
+
+
+
         </div>
-      </div>
-  
-      <div class="card w-75 center">
-        <div class="card-body">
-          <h5 class="card-title">Username</h5>
-          <p class="card-text"> Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">View</a>
-        </div>
-      </div>
-  
-      <div class="card w-75 center">
-        <div class="card-body">
-          <h5 class="card-title">Username</h5>
-          <p class="card-text"> Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">View</a>
-        </div>
-      </div>
-  
-      <div class="card w-75 center">
-        <div class="card-body">
-          <h5 class="card-title">Username</h5>
-          <p class="card-text"> Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content. Feedback Content is here... With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">View</a>
-        </div>
-      </div>
-  
-    
     </div>
-  </div>
 </div>

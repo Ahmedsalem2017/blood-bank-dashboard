@@ -1,6 +1,9 @@
+import { WrongeWayComponent } from './../../x/src/app/components/wronge-way/wronge-way.component';
+import { PermiessionsDeniedComponent } from './components/permiessions-denied/permiessions-denied.component';
+import { AdminGuardService } from './services/admin-guard.service';
+import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { environment } from './../environments/environment';
-import { WrongeWayComponent } from './components/wronge-way/wronge-way.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -21,35 +24,42 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginGuardService } from './services/login-guard.service';
+
 const appRoutes: Routes = [
   {
     path: '',
     component: FeedbackComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService, AdminGuardService]
   },
   {
     path: 'home',
     component: FeedbackComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService, AdminGuardService]
   },
 {
   path: 'donors',
   component: DonorsComponent,
-  canActivate: [AuthGuardService]
+  canActivate: [AuthGuardService, AdminGuardService]
 },
 {
   path: 'requests',
   component: RequestsComponent,
-  canActivate: [AuthGuardService]
+  canActivate: [AuthGuardService, AdminGuardService]
 },
 {
   path: 'feedback',
   component: FeedbackComponent,
-  canActivate: [AuthGuardService]
+  canActivate: [AuthGuardService, AdminGuardService]
 },
 {
   path: 'login',
-  component: LoginComponent
+  component: LoginComponent,
+  canActivate: [LoginGuardService]
+},
+{
+  path: 'denied',
+  component: PermiessionsDeniedComponent
 },
 {
   path: '**',
@@ -68,7 +78,8 @@ const appRoutes: Routes = [
     DonorsComponent,
     RequestsComponent,
     FeedbackComponent,
-    WrongeWayComponent
+    WrongeWayComponent,
+    PermiessionsDeniedComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +89,12 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
-  providers: [AuthGuardService],
+  providers: [
+    AuthGuardService,
+    LoginGuardService,
+    UserService,
+    AdminGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

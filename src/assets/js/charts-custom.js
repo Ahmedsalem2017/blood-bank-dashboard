@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*global $, document, LINECHARTEXMPLE*/
 $(document).ready(function () {
 
@@ -222,6 +223,8 @@ $(document).ready(function () {
 
 });
 =======
+=======
+>>>>>>> refs/remotes/origin/master
 /*global $, document, LINECHARTEXMPLE*/
 $(document).ready(function () {
 
@@ -444,4 +447,7 @@ $(document).ready(function () {
 
 
 });
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
 >>>>>>> refs/remotes/origin/master

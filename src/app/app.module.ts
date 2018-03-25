@@ -1,4 +1,4 @@
-import { WrongeWayComponent } from './../../x/src/app/components/wronge-way/wronge-way.component';
+import { WrongeWayComponent } from './components/wronge-way/wronge-way.component';
 import { PermiessionsDeniedComponent } from './components/permiessions-denied/permiessions-denied.component';
 import { AdminGuardService } from './services/admin-guard.service';
 import { UserService } from './services/user.service';

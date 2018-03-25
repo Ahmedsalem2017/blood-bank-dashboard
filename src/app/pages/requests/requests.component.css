@@ -1,5 +1,5 @@
-.center {
-    margin: 3% auto;
+.table-margin {
+    margin: 3% 5.5% 3% 3%;
 }
 
 .fa.fa-trash {
@@ -12,4 +12,11 @@
 
 .text_Alignment {
     text-align: right;
+}
+table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
 }

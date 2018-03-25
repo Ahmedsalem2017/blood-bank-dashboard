@@ -130,6 +130,7 @@ $(document).ready(function () {
     });
 
 });
+<<<<<<< HEAD
 /*global $, document, Chart, LINECHART, data, options, window*/
 $(document).ready(function () {
 
@@ -262,3 +263,5 @@ $(document).ready(function () {
     });
 
 });
+=======
+>>>>>>> refs/remotes/origin/master

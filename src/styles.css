@@ -6,8 +6,11 @@
 
 .active{
     width: 100% !important;
-<<<<<<< HEAD
 }
-=======
+
+.active .nav-width{
+    width: 90% !important;
 }
->>>>>>> refs/remotes/origin/master
+.active .footer-width{
+    width: 90% !important;
+}

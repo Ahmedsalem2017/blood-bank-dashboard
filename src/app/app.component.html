@@ -1,4 +1,4 @@
-<div class="page" [class.active]="!user.isLogin">
+<div class="page" [class.active]="user.isLogin" [class.w-100]="!user.isLogin">
 <app-nav-bar  *ngIf="user.isLogin"></app-nav-bar>
 <router-outlet></router-outlet>
 <app-right-offcanvas *ngIf="user.isLogin"></app-right-offcanvas>

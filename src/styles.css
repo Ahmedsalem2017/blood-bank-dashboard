@@ -7,10 +7,3 @@
 .active{
     width: 100% !important;
 }
-
-.active .nav-width{
-    width: 90% !important;
-}
-.active .footer-width{
-    width: 90% !important;
-}

@@ -1,6 +1,6 @@
 <!-- Donors Section-->
 
-<div class="col-lg-10 col-sm-6 table-margin">
+<div class="col-lg-12 col-sm-6 table-margin">
     <div class="card text_Alignment">
         <div class="card-header">
             <h4>إدارة المتبرعين</h4>
@@ -20,14 +20,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let user of users | async">
-                            <td><strong><a href="#" class="btn fa fa-trash" (click)="delete(user.$key)"></a></strong></td>
-                            <td>{{ user.time }}</td>
-                            <td>{{ user.location }}</td>
-                            <td>{{ user.bloodtype }}</td>
-                            <td>{{ user.phone }}</td>
-                            <td>{{ user.name }}</td>
-                            <!-- <td scope="row">1</td> -->
+                        <tr *ngFor="let item of items">
+                            <td><strong><a href="#" class="btn fa fa-trash" (click)="deleteItem(item.key)"></a></strong></td>
+                            <td>{{ item.donors_time }}</td>
+                            <td>{{ item.donors_location }}</td>
+                            <td>{{ item.donors_bloodtype }}</td>
+                            <td>{{ item.donors_phone }}</td>
+                            <td>{{ item.donors_name }}</td>
                             <td class="counterCell"></td>
                         </tr>
                     </tbody>

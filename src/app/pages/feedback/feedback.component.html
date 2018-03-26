@@ -1,19 +1,17 @@
+<!-- Donors Section -->
+
 <div class="container ">
     <div class="row text_Alignment">
         <div class="col-12">
 
-            <!-- Feedback Card Section-->
+            <!-- Feedback Card -->
             <div *ngFor="let item of items" class="card w-75 center">
                 <div class="card-body ">
                     <h5 class="card-title ">{{ item.feedback_title }}</h5>
-                    <p class="card-text">
-                        {{ item.feedback_subject }}
-                    </p>
+                    <p class="card-text">{{ item.feedback_subject }}</p>
                     <button class="btn btn-danger pull-left" (click)="deleteItem(item.key)">حذف</button>
                 </div>
             </div>
-
-
 
         </div>
     </div>

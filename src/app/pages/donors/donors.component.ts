@@ -1,27 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase , AngularFireList } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { base64Decode } from '@firebase/util';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-donors',
   templateUrl: './donors.component.html',
   styleUrls: ['./donors.component.css']
 })
-export class DonorsComponent implements OnInit {
+export class DonorsComponent implements OnInit , OnDestroy {
 
-  users: Observable<any[]>;
-  itemRef: AngularFireList<any>;
+  items: any;
+  dataSubscription: Subscription;
 
-  constructor(db: AngularFireDatabase) {
-    this.users = db.list('/Donors').valueChanges();
-    this.itemRef = db.list('/Donors');
+  constructor(private afDB: AngularFireDatabase) {
   }
 
   ngOnInit() {
+    this.dataSubscription = this.afDB.list('Donors', ref => {
+      return ref.orderByChild('decs');
+    }).snapshotChanges().map(actions => {
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    }).subscribe(items => {
+      this.items = items;
+    });
   }
 
-  // deleteItem(key: string) {    
-  //   this.itemRef.remove(key); 
-  // }
+  deleteItem(key) {
+    if (confirm('هل انت متأكد من الحذف؟')) {
+        this.afDB.object('Donors/' + key).remove().then(_ => {
+          alert('تم الحذف بنجاح');
+        });
+    }
+  }
+
+  ngOnDestroy() {
+    this.dataSubscription.unsubscribe();
+  }
 
 }

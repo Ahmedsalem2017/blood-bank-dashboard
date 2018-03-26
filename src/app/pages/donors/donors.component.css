@@ -1,6 +1,10 @@
-.table-margin {
-    margin: 3%;
+.center {
+    margin: none;
 }
+
+/* .table-width {
+    width: 78%;
+} */
 
 .fa.fa-trash {
     font-size: 25px;

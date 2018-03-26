@@ -8,12 +8,13 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css']
 })
-export class FeedbackComponent implements OnInit, OnDestroy {
+export class FeedbackComponent implements OnInit , OnDestroy {
 
   items: any;
   dataSubscription: Subscription;
+
   constructor(private afDB: AngularFireDatabase) {
-   }
+  }
 
   ngOnInit() {
     this.dataSubscription = this.afDB.list('Feedback', ref => {
@@ -24,6 +25,7 @@ export class FeedbackComponent implements OnInit, OnDestroy {
       this.items = items;
     });
   }
+
   deleteItem(key) {
     if (confirm('هل انت متأكد من الحذف؟')) {
         this.afDB.object('Feedback/' + key).remove().then(_ => {

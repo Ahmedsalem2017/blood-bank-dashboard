@@ -22,11 +22,11 @@
                     <tbody>
                         <tr *ngFor="let item of items">
                             <td><strong><a href="#" class="btn fa fa-trash" (click)="deleteItem(item.key)"></a></strong></td>
-                            <td>{{ item.donors_time }}</td>
-                            <td>{{ item.donors_location }}</td>
-                            <td>{{ item.donors_bloodtype }}</td>
-                            <td>{{ item.donors_phone }}</td>
-                            <td>{{ item.donors_name }}</td>
+                            <td>{{ item.time }}</td>
+                            <td>{{ item.location }}</td>
+                            <td>{{ item.bloodtype }}</td>
+                            <td>{{ item.phone }}</td>
+                            <td>{{ item.name }}</td>
                             <td class="counterCell"></td>
                         </tr>
                     </tbody>

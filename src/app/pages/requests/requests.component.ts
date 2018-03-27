@@ -28,9 +28,9 @@ export class RequestsComponent implements OnInit  , OnDestroy{
 
   deleteItem(key) {
     if (confirm('هل انت متأكد من الحذف؟')) {
-        this.afDB.object('required/' + key).remove().then(_ => {
-          alert('تم الحذف بنجاح');
-        });
+      this.afDB.object('required/' + key).remove().then(_ => {
+        alert('تم الحذف بنجاح');
+      });
     }
   }
 

@@ -2,6 +2,7 @@
     margin: none;
 }
 
+
 /* .table-width {
     width: 78%;
 } */
@@ -19,9 +20,10 @@
 }
 
 table {
-    counter-reset: tableCount;     
+    counter-reset: tableCount;
 }
-.counterCell:before {              
-    content: counter(tableCount); 
-    counter-increment: tableCount; 
+
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
 }

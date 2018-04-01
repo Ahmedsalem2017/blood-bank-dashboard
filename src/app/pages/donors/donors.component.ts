@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./donors.component.css']
 })
 export class DonorsComponent implements OnInit , OnDestroy {
-
+  loading = true;
   items: any;
   dataSubscription: Subscription;
 
@@ -23,6 +23,7 @@ export class DonorsComponent implements OnInit , OnDestroy {
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     }).subscribe(items => {
       this.items = items;
+      this.loading = false;
     });
   }
 

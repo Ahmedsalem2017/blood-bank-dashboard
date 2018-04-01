@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit , OnDestroy {
-
+  loading = true;
   items: any;
   dataSubscription: Subscription;
 
@@ -22,7 +22,9 @@ export class FeedbackComponent implements OnInit , OnDestroy {
     }).snapshotChanges().map(actions => {
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     }).subscribe(items => {
-      this.items = items;
+      this.items = items
+      this.loading = false;
+
     });
   }
 

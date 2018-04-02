@@ -33,7 +33,7 @@
                     <tbody>
                         <tr *ngFor="let item of items | paginate: { itemsPerPage:20, currentPage:p }; let i = index ">
 
-                            <td><strong><a href="#" class="btn fa fa-trash" (click)="deleteItem(item.key)"></a></strong></td>
+                            <td><strong><a href="#" style="color:#ff0000cc;" class="btn fa fa-trash" (click)="deleteItem(item.key)"></a></strong></td>
                             <td>{{ item.time }}</td>
                             <td>{{ item.location }}</td>
                             <td>{{ item.bloodtype }}</td>

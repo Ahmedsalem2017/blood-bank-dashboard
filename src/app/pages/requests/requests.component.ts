@@ -12,7 +12,7 @@ export class RequestsComponent implements OnInit  , OnDestroy{
   loading = true;
   items: any;
   dataSubscription: Subscription;
-  
+
   constructor(private afDB: AngularFireDatabase) {
   }
 

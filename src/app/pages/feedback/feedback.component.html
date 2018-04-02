@@ -12,7 +12,7 @@
                       </div>
     </span>
     </div>
-    <div class="row text_Alignment">
+    <div class="row text_Alignment"  *ngIf="!loading">
         <div class="col-12">
 
             <!-- Feedback Card -->
@@ -23,7 +23,7 @@
                     <button class="btn btn-danger pull-left" (click)="deleteItem(item.key)">حذف</button>
                 </div>
             </div>
-            <pagination-controls (pageChange)="p =$event"></pagination-controls>
+            <pagination-controls (pageChange)="p =$event"  *ngIf="!loading"></pagination-controls>
         </div>
     </div>
 </div>

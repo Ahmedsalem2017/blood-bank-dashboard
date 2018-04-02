@@ -1,3 +1,4 @@
+import { PaginationComponent } from './components/pagination/pagination.component';
 import { WrongeWayComponent } from './components/wronge-way/wronge-way.component';
 import { PermiessionsDeniedComponent } from './components/permiessions-denied/permiessions-denied.component';
 import { AdminGuardService } from './services/admin-guard.service';
@@ -82,7 +83,8 @@ const appRoutes: Routes = [
     RequestsComponent,
     FeedbackComponent,
     WrongeWayComponent,
-    PermiessionsDeniedComponent
+    PermiessionsDeniedComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private user: UserService) {
+  constructor(public user: UserService) {
     console.log(user.isLogin);
   }
 

@@ -1,0 +1,29 @@
+<!-- Donors Section -->
+
+<div class="container ">
+    <div style="text-align:center;">
+        <span *ngIf="loading">
+                <div class="spinner">
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4"></div>
+                        <div class="rect5"></div>
+                      </div>
+    </span>
+    </div>
+    <div class="row text_Alignment">
+        <div class="col-12">
+
+            <!-- Feedback Card -->
+            <div *ngFor="let item of items | paginate: { itemsPerPage:20, currentPage:p }" class="card w-75 center">
+                <div class="card-body ">
+                    <h5 class="card-title ">{{ item.feedback_title }}</h5>
+                    <p class="card-text">{{ item.feedback_subject }}</p>
+                    <button class="btn btn-danger pull-left" (click)="deleteItem(item.key)">حذف</button>
+                </div>
+            </div>
+            <pagination-controls (pageChange)="p =$event"></pagination-controls>
+        </div>
+    </div>
+</div>

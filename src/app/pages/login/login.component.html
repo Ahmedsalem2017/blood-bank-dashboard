@@ -1,0 +1,32 @@
+<div class="page login-page">
+    <div class="container">
+        <div class="form-outer text-center d-flex align-items-center">
+            <div class="form-inner">
+                <div class="logo text-uppercase"><span>Blood Bank </span><strong class="text-primary"> Dashboard</strong></div>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p> -->
+                <form [formGroup]="form" (ngSubmit)="doLogin()" novalidate>
+                    <div *ngIf="loginError" class="alert alert-danger text-center">
+                        <ul class="list-unstyled">
+                            <li>خطأ في كلمة البريد الالكتروني او كلمة المرور</li>
+                        </ul>
+                    </div>
+                    <div class="form-group-material">
+                        <input [formControl]="email" id="login-username" type="text" name="loginUsername" required class="input-material">
+                        <label for="login-username" class="label-material">E-mail</label>
+                    </div>
+
+                    <div class="form-group-material">
+                        <input [formControl]="password" id="login-password" type="password" name="loginPassword" required class="input-material">
+                        <label for="login-password" class="label-material">Password</label>
+                    </div>
+                    <button [disabled]="form.invalid" class="btn btn-danger pull-left">Login</button>
+                    <span *ngIf="loading" class="pull-left ml-3 mt-2">Loading...</span>
+                </form>
+            </div>
+            <div class="copyrights text-center">
+                <!-- <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p> -->
+                <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor(public user: UserService) {
-    console.log(user.isLogin);
   }
 
 

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { base64Decode } from '@firebase/util';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Subscription } from 'rxjs/Subscription';
+import { DBService } from '../../services/db.service';
 
 @Component({
   selector: 'app-feedback',
@@ -13,16 +14,13 @@ export class FeedbackComponent implements OnInit , OnDestroy {
   items: any;
   dataSubscription: Subscription;
 
-  constructor(private afDB: AngularFireDatabase) {
+  constructor(
+    private db: DBService) {
   }
 
   ngOnInit() {
-    this.dataSubscription = this.afDB.list('Feedback', ref => {
-      return ref.orderByChild('decs');
-    }).snapshotChanges().map(actions => {
-      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
-    }).subscribe(items => {
-      this.items = items
+    this.dataSubscription = this.db.getData('Feedback').subscribe(items => {
+      this.items = items;
       this.loading = false;
 
     });
@@ -30,7 +28,7 @@ export class FeedbackComponent implements OnInit , OnDestroy {
 
   deleteItem(key) {
     if (confirm('هل انت متأكد من الحذف؟')) {
-        this.afDB.object('Feedback/' + key).remove().then(_ => {
+        this.db.removeObject('Feedback/' + key).then(_ => {
           alert('تم الحذف بنجاح');
         });
     }

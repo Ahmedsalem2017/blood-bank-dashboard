@@ -1,3 +1,4 @@
+import { DBService } from './services/db.service';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { WrongeWayComponent } from './components/wronge-way/wronge-way.component';
 import { PermiessionsDeniedComponent } from './components/permiessions-denied/permiessions-denied.component';
@@ -99,7 +100,8 @@ const appRoutes: Routes = [
     AuthGuardService,
     LoginGuardService,
     UserService,
-    AdminGuardService
+    AdminGuardService,
+    DBService
   ],
   bootstrap: [AppComponent]
 })

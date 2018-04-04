@@ -31,7 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of items | paginate: { itemsPerPage:20, currentPage:p }; let i = index ">
+                        <tr *ngFor="let item of items | paginate: { itemsPerPage:20, currentPage:p }; let i = index " [class.bg-warning]="item.hide == 1">
                             <td><strong><span style="color:#ff0000cc;" class="btn fa fa-trash" (click)="deleteItem(item.key)"></span></strong></td>
                             <td>{{ item.time }}</td>
                             <td>{{ item.location }}</td>

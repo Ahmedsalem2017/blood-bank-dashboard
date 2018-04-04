@@ -2,7 +2,7 @@
     <div class="container">
         <div class="form-outer text-center d-flex align-items-center">
             <div class="form-inner">
-                <div class="logo text-uppercase"><span>Blood Bank </span><strong class="text-primary"> Dashboard</strong></div>
+                <div dir="rtl" class="logo text-uppercase"><span>لوحة تحكم تطبيق  </span><strong class="text-primary"> مصرف الدم</strong></div>
                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p> -->
                 <form [formGroup]="form" (ngSubmit)="doLogin()" novalidate>
                     <div *ngIf="loginError" class="alert alert-danger text-center">
@@ -17,14 +17,15 @@
                         </ul>
                     </div>
                     <div class="form-group-material">
-                        <input [formControl]="email" type="text" required="required" class="input-material" placeholder="E-mail">
+                        <input dir="rtl" [formControl]="email" type="text" required="required" class="input-material" placeholder="البريد الالكتروني">
                     </div>
 
                     <div class="form-group-material">
-                        <input [formControl]="password" type="password" required class="input-material" placeholder="Password">
+                        <input dir="rtl" [formControl]="password" type="password" required class="input-material" placeholder="كلمة المرور">
                     </div>
-                    <button [disabled]="form.invalid" class="btn btn-danger pull-left">Login</button>
-                    <span *ngIf="loading" class="pull-left ml-3 mt-2">Loading...</span>
+                    <span dir="rtl" *ngIf="loading" class="pull-left ml-3 mt-2">يرجى الانتظار ...</span>
+                    <button [disabled]="form.invalid" class="btn btn-danger pull-right">تسجيل الدخول</button>
+                    
                 </form>
             </div>
             <div class="copyrights text-center">

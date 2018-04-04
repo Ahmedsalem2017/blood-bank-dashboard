@@ -17,3 +17,11 @@ a:focus {
     color: #fff;
     text-decoration: none;
 }
+
+#logout{
+    color: white !important;
+}
+
+#logout:hover{ 
+    cursor: pointer;
+}

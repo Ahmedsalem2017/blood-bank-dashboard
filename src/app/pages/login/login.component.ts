@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginError = false;
   loading = false;
   constructor(private afAuth: AngularFireAuth,
-              private user: UserService,
+              public user: UserService,
               private router: Router) {
 
     this.form = new FormGroup({

@@ -23,6 +23,7 @@
                     <button class="btn btn-danger pull-left" (click)="deleteItem(item.key)">حذف</button>
                 </div>
             </div>
+            <h4>عدد المقترحات : {{ items.length }}</h4>
             <pagination-controls (pageChange)="p =$event"  *ngIf="!loading"></pagination-controls>
         </div>
     </div>

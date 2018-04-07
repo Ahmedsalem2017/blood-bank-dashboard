@@ -1,3 +1,5 @@
+import { ValuesService } from './common/values.service';
+
 import { DBService } from './services/db.service';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { WrongeWayComponent } from './components/wronge-way/wronge-way.component';
@@ -101,7 +103,8 @@ const appRoutes: Routes = [
     LoginGuardService,
     UserService,
     AdminGuardService,
-    DBService
+    DBService,
+    ValuesService
   ],
   bootstrap: [AppComponent]
 })

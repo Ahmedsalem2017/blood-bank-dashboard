@@ -16,35 +16,50 @@
                             </span>
             </div>
         </div>
-        <div class="card-body"  *ngIf="!loading">
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>مسح</th>
-                            <th>وقت الحظور</th>
-                            <th>الموقع</th>
-                            <th>فصيلة الدم</th>
-                            <th>رقم الهاتف</th>
-                            <th>الاسم</th>
-                            <th>#</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of items | paginate: { itemsPerPage:20, currentPage:p }; let i = index " [class.bg-warning]="item.hide == 1">
-
-                            <td><strong><span style="color:#ff0000cc;" class="btn fa fa-trash" (click)="deleteItem(item.key)"></span></strong></td>
-                            <td>{{ item.time }}</td>
-                            <td>{{ item.location }}</td>
-                            <td>{{ item.bloodtype }}</td>
-                            <td>{{ item.phone }}</td>
-                            <td>{{ item.name }}</td>
-                            <td>{{ i + 1 }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <pagination-controls (pageChange)="p =$event" *ngIf="!loading"></pagination-controls>
+        <div >
+            <div class="form-group w-25 pull-right mr-3" dir="rtl">
+                <label for="">فلترة حسب فصيلة الدم</label>
+                <select #bloodType (change)="fillter(bloodType)" name="" id="" class="form-control">
+                        <option>الكل</option>
+                        <option *ngFor="let type of values.bloodTypes">{{ type }}</option>
+                       
+                </select>
+           </div>
+            
+            <div class="card-body" *ngIf="!loading" >
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>مسح</th>
+                                <th>وقت الحظور</th>
+                                <th>الموقع</th>
+                                <th>فصيلة الدم</th>
+                                <th>رقم الهاتف</th>
+                                <th>الاسم</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of items | paginate: { itemsPerPage:20, currentPage:p }; let i = index " 
+                                [class.bg-warning]="item.hide == 1"
+                                >
+    
+                                <td><strong><span style="color:#ff0000cc;" class="btn fa fa-trash" (click)="deleteItem(item.key)"></span></strong></td>
+                                <td>{{ item.time }}</td>
+                                <td>{{ item.location }}</td>
+                                <td>{{ item.bloodtype }}</td>
+                                <td>{{ item.phone }}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ i + 1 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>عدد فصائل الدم الموجودة : {{ items.length }}</h4>
+                    <pagination-controls (pageChange)="p =$event" *ngIf="!loading"></pagination-controls>
+                </div>
             </div>
         </div>
+   
     </div>
 </div>

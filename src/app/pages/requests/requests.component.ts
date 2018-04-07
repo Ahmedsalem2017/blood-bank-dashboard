@@ -1,3 +1,4 @@
+import { ValuesService } from './../../common/values.service';
 import { DBService } from './../../services/db.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { base64Decode } from '@firebase/util';
@@ -15,7 +16,8 @@ export class RequestsComponent implements OnInit  , OnDestroy{
   dataSubscription: Subscription;
 
   constructor(
-    private db: DBService) {
+    private db: DBService,
+    public values: ValuesService) {
   }
 
   ngOnInit() {
@@ -35,6 +37,21 @@ export class RequestsComponent implements OnInit  , OnDestroy{
 
   ngOnDestroy() {
     this.dataSubscription.unsubscribe();
+  }
+
+
+  fillter(bloodType: HTMLInputElement) {
+    if (bloodType.value === 'الكل') {
+      return this.ngOnInit();
+    }
+    this.loading = true;
+    this.db.getDataByQuery('required', ref => {
+      return ref.orderByChild('bloodtype')
+                .equalTo(bloodType.value);
+    }).subscribe(items => {
+      this.items = items;
+      this.loading = false;
+    });
   }
 
 }

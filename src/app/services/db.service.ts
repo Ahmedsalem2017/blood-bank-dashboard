@@ -1,4 +1,4 @@
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, QueryFn } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -17,6 +17,11 @@ export class DBService {
     });
   }
 
+  getDataByQuery(field, query: QueryFn) {
+    return this.afDB.list(field, query).snapshotChanges().map(actions => {
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
+  }
   removeObject(field) {
     return this.afDB.object(field).remove();
   }

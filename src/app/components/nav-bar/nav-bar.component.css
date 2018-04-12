@@ -1,0 +1,27 @@
+/* .nav-width{
+    width: 86%;
+} */
+
+.topNavHover:hover {
+    color: #ff0000cc;
+}
+
+a:hover {
+    background: #ff0000;
+    color: #fff;
+}
+
+a:focus {
+    background: #ff000080;
+    ;
+    color: #fff;
+    text-decoration: none;
+}
+
+#logout{
+    color: white !important;
+}
+
+#logout:hover{ 
+    cursor: pointer;
+}

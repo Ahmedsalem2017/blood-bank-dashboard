@@ -1,0 +1,29 @@
+.center {
+    margin: none;
+}
+
+
+/* .table-width {
+    width: 78%;
+} */
+
+.fa.fa-trash {
+    font-size: 25px;
+}
+
+.dir {
+    direction: rtl;
+}
+
+.text_Alignment {
+    text-align: right;
+}
+
+table {
+    counter-reset: tableCount;
+}
+
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}

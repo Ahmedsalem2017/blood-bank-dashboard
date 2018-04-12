@@ -1,0 +1,57 @@
+<!-- UIkit Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+
+<nav class="navbar navbar-light navbar-expand-xlg uk-hidden@m">
+
+    <a class="hidden-sm hidden-lg" class="navbar-brand" href="/"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar1" style="text-align:center;">
+        <ul class="navbar-nav mr-auto ">
+            <li routerLinkActive="active">
+                <a [routerLink]="['/home']">الصفحة الرئيسية <i class="icon-home"></i> </a>
+            </li>
+            <li routerLinkActive="active">
+                <a [routerLink]="['/feedback']">مقترحات المستخدمين <i class="icon-form"></i> </a>
+            </li>
+            <li routerLinkActive="active">
+                <a [routerLink]="['/donors']">المتبرعون <i class="fa fa-bar-chart"></i> </a>
+            </li>
+            <li routerLinkActive="active">
+                <a [routerLink]="['/requests']">الطلبات <i class="icon-grid"></i> </a>
+            </li>
+
+            
+            <hr size="10">
+            <li  routerLinkActive="active">
+              <span style="color: white !important;" (click)="logout()" >تسجيل خروج <i class="fa fa-sign-out"></i></span>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<header class="header">
+    <nav class="navbar col-lg-12 uk-visible@m">
+        <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <li class="nav-item"><span id="logout"  (click)="logout()" class="nav-link logout">تسجيل خروج <i class="fa fa-sign-out"></i></span></li>
+
+
+                </ul>
+                <div class="navbar-header">
+
+                    <div class="brand-text d-none d-md-inline-block"><strong class="text-primary"> لوحة التحكم </strong></div>
+
+                </div>
+            </div>
+        </div>
+
+    </nav>
+</header>
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>

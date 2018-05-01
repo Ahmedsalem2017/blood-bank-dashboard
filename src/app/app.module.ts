@@ -32,6 +32,18 @@ import { AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginGuardService } from './services/login-guard.service';
+import { FeedarchivedComponent } from './components/feedarchived/feedarchived.component';
+
+
+var config = {
+  apiKey: "AIzaSyDmo6AiE_vJnpP4RJwwRHEGRKK9_Hq-yrY",
+  authDomain: "iq-bloodbank.firebaseapp.com",
+  databaseURL: "https://iq-bloodbank.firebaseio.com",
+  projectId: "iq-bloodbank",
+  storageBucket: "iq-bloodbank.appspot.com",
+  messagingSenderId: "349200844324"
+};
+
 
 const appRoutes: Routes = [
   {
@@ -57,6 +69,11 @@ const appRoutes: Routes = [
 {
   path: 'feedback',
   component: FeedbackComponent,
+  canActivate: [AuthGuardService, AdminGuardService]
+},
+{
+  path: 'feedarchived',
+  component: FeedarchivedComponent,
   canActivate: [AuthGuardService, AdminGuardService]
 },
 {
@@ -87,13 +104,14 @@ const appRoutes: Routes = [
     FeedbackComponent,
     WrongeWayComponent,
     PermiessionsDeniedComponent,
-    PaginationComponent
+    PaginationComponent,
+    FeedarchivedComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     NgxPaginationModule

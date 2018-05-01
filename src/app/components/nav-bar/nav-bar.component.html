@@ -22,11 +22,13 @@
             <li routerLinkActive="active">
                 <a [routerLink]="['/requests']">الطلبات <i class="icon-grid"></i> </a>
             </li>
+            <li routerLinkActive="active">
+                <a [routerLink]="['/feedarchived']">المقترحات المؤرشفة  <i class="icon-form"></i> </a>
+            </li>
 
-            
             <hr size="10">
-            <li  routerLinkActive="active">
-              <span style="color: white !important;" (click)="logout()" >تسجيل خروج <i class="fa fa-sign-out"></i></span>
+            <li routerLinkActive="active">
+                <span style="color: white !important;" (click)="logout()">تسجيل خروج <i class="fa fa-sign-out"></i></span>
             </li>
 
         </ul>
@@ -38,7 +40,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
 
                 <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                    <li class="nav-item"><span id="logout"  (click)="logout()" class="nav-link logout">تسجيل خروج <i class="fa fa-sign-out"></i></span></li>
+                    <li class="nav-item"><span id="logout" (click)="logout()" class="nav-link logout">تسجيل خروج <i class="fa fa-sign-out"></i></span></li>
 
 
                 </ul>

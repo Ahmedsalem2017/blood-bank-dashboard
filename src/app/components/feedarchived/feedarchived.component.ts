@@ -5,31 +5,31 @@ import { Subscription } from 'rxjs/Subscription';
 import { DBService } from '../../services/db.service';
 
 @Component({
-  selector: 'app-feedback',
-  templateUrl: './feedback.component.html',
-  styleUrls: ['./feedback.component.css']
+  selector: 'app-feedarchived',
+  templateUrl: './feedarchived.component.html',
+  styleUrls: ['./feedarchived.component.css']
 })
-export class FeedbackComponent implements OnInit , OnDestroy {
+
+export class FeedarchivedComponent implements OnInit {
   loading = true;
   items: any;
   dataSubscription: Subscription;
-  subscription;
   constructor(
     private db: DBService,
     private AFDB:AngularFireDatabase) {
   }
 
   ngOnInit() {
-    this.dataSubscription = this.db.getData('Feedback').subscribe(items => {
+    this.dataSubscription = this.db.getData('archived').subscribe(items => {
       this.items = items;
       this.loading = false;
-
+      
     });
   }
 
   deleteItem(key) {
     if (confirm('هل انت متأكد من الحذف؟')) {
-        this.db.removeObject('Feedback/' + key).then(_ => {
+      this.db.removeObject('archived/' + key).then(_ => {
           alert('تم الحذف بنجاح');
         });
     }
@@ -38,18 +38,4 @@ export class FeedbackComponent implements OnInit , OnDestroy {
   ngOnDestroy() {
     this.dataSubscription.unsubscribe();
   }
- 
- feedarchive(items){
-  if (confirm('هل انت متأكد من أرشفة هذا الموضوع؟')) {
-this.AFDB.list('/archived').push({items});
-
 }
-  }
-
-
-
-
-}
-
-
-

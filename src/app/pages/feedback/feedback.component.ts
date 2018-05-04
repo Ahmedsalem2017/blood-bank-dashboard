@@ -41,11 +41,16 @@ export class FeedbackComponent implements OnInit , OnDestroy {
  
  feedarchive(items){
   if (confirm('هل انت متأكد من أرشفة هذا الموضوع؟')) {
-this.AFDB.list('/archived').push({items});
+this.AFDB.list('/archived').push({items}).then(_=>{
+  alert('تم الأرشفة بنجاح');
+});
 
 }
   }
 
+  deleteArchived(key) {
+        this.db.removeObject('Feedback/' + key);
+    }
 
 
 

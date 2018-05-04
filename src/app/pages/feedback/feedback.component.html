@@ -21,7 +21,7 @@
                     <h5 class="card-title rtl">{{ item.feedback_title }}</h5>
                     <p class="card-text rtl">{{ item.feedback_subject }}</p>
                     <button class="btn btn-danger pull-left" (click)="deleteItem(item.key)">حذف</button>
-                    <button class="btn btn-warning pull-left" (click)="feedarchive(item); deleteItem(item.key)">ارشفة</button>
+                    <button class="btn btn-warning pull-left ml-2" (click)="feedarchive(item); deleteArchived(item.key)">ارشفة</button>
                 </div>
             </div>
             <h4>عدد المقترحات : {{ items.length }}</h4>
